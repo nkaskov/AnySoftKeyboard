@@ -35,7 +35,7 @@ import com.menny.android.anysoftkeyboard.R;
 public class TutorialsProvider {
     private static final String TAG = "ASK Tutorial";
 
-    public static void showDragonsIfNeeded(Context context) {
+    /*public static void showDragonsIfNeeded(Context context) {
         if (BuildConfig.TESTING_BUILD && firstTestersTimeVersionLoaded(context)) {
             Logger.i(TAG, "TESTERS VERSION added");
 
@@ -52,12 +52,12 @@ public class TutorialsProvider {
                     .setWhen(System.currentTimeMillis())
                     .setContentIntent(contentIntent)
                     .setColor(ContextCompat.getColor(context, R.color.notification_background_debug_version))
-                    .setDefaults(0/*no sound, vibrate, etc*/)
+                    .setDefaults(0)
                     .setAutoCancel(true);
 
             manager.notify(R.id.notification_icon_debug_version, notificationBuilder.build());
         }
-    }
+    }*/
 
     private static boolean firstTestersTimeVersionLoaded(Context context) {
         final String KEY = "testers_version_version_hash";

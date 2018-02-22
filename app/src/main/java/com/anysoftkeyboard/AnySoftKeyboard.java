@@ -1055,7 +1055,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
                 hideWindow();
                 break;
             case KeyCodes.SETTINGS:
-                showOptionsMenu();
+                //showOptionsMenu();
                 break;
             case KeyCodes.SPLIT_LAYOUT:
             case KeyCodes.MERGE_LAYOUT:
@@ -1342,7 +1342,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
         keyboards.toArray(items);
         final String SETTINGS_ID = "ASK_LANG_SETTINGS_ID";
         ids[ids.length - 1] = SETTINGS_ID;
-        items[ids.length - 1] = getText(R.string.setup_wizard_step_three_action_languages);
+        //items[ids.length - 1] = getText(R.string.setup_wizard_step_three_action_languages);
 
         showOptionsDialogWithData(getText(R.string.select_keyboard_popup_title), R.drawable.ic_keyboard_globe_menu,
                 items, (di, position) -> {
@@ -2115,7 +2115,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
         showNewOptionDialog(builder.create());
     }
 
-    private void showOptionsMenu() {
+    /*private void showOptionsMenu() {
         showOptionsDialogWithData(getText(R.string.ime_name), R.mipmap.ic_launcher,
                 new CharSequence[]{
                         getText(R.string.ime_settings),
@@ -2143,7 +2143,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
                     }
                 }
         );
-    }
+    }*/
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

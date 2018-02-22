@@ -148,7 +148,7 @@ public class AnyApplication extends Application {
         mKeyboardThemeFactory = createKeyboardThemeFactory();
         mQuickTextKeyFactory = createQuickTextKeyFactory();
 
-        TutorialsProvider.showDragonsIfNeeded(getApplicationContext());
+        //TutorialsProvider.showDragonsIfNeeded(getApplicationContext());
 
         mCompositeDisposable.add(mRxSharedPrefs.getBoolean(R.string.settings_key_show_settings_app, R.bool.settings_default_show_settings_app)
                 .asObservable().subscribe(showApp -> {

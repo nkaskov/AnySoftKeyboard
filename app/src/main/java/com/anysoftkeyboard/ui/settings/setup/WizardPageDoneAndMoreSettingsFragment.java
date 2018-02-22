@@ -30,9 +30,9 @@ public class WizardPageDoneAndMoreSettingsFragment extends WizardPageBaseFragmen
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.go_to_languages_action).setOnClickListener(this);
-        view.findViewById(R.id.go_to_theme_action).setOnClickListener(this);
-        view.findViewById(R.id.go_to_all_settings_action).setOnClickListener(this);
+        //view.findViewById(R.id.go_to_languages_action).setOnClickListener(this);
+        //view.findViewById(R.id.go_to_theme_action).setOnClickListener(this);
+        //view.findViewById(R.id.go_to_all_settings_action).setOnClickListener(this);
 
         mDemoAnyKeyboardView = view.findViewById(R.id.demo_keyboard_view);
     }
@@ -46,17 +46,17 @@ public class WizardPageDoneAndMoreSettingsFragment extends WizardPageBaseFragmen
     public void onClick(View v) {
         FragmentChauffeurActivity activity = (FragmentChauffeurActivity) getActivity();
         switch (v.getId()) {
-            case R.id.go_to_languages_action:
+            /*case R.id.go_to_languages_action:
                 activity.addFragmentToUi(new KeyboardAddOnBrowserFragment(), TransitionExperiences.DEEPER_EXPERIENCE_TRANSITION);
-                break;
-            case R.id.go_to_theme_action:
+                break;*/
+            /*case R.id.go_to_theme_action:
                 activity.addFragmentToUi(new KeyboardThemeSelectorFragment(), TransitionExperiences.DEEPER_EXPERIENCE_TRANSITION);
-                break;
-            case R.id.go_to_all_settings_action:
+                break;*/
+            /*case R.id.go_to_all_settings_action:
                 startActivity(new Intent(getContext(), MainSettingsActivity.class));
                 //not returning to this Activity any longer.
                 activity.finish();
-                break;
+                break;*/
             default:
                 throw new IllegalArgumentException("Failed to handle "+v.getId()+" in WizardPageDoneAndMoreSettingsFragment");
         }
@@ -69,7 +69,7 @@ public class WizardPageDoneAndMoreSettingsFragment extends WizardPageBaseFragmen
         defaultKeyboard.loadKeyboard(mDemoAnyKeyboardView.getThemedKeyboardDimens());
         mDemoAnyKeyboardView.setKeyboard(defaultKeyboard, null, null);
 
-        SetupSupport.popupViewAnimationWithIds(getView(), R.id.go_to_languages_action, 0, R.id.go_to_theme_action, 0, R.id.go_to_all_settings_action);
+        //SetupSupport.popupViewAnimationWithIds(getView(),  R.id.go_to_theme_action, 0, R.id.go_to_all_settings_action);
     }
 
     @Override

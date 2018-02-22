@@ -131,14 +131,14 @@ class ChewbaccaUncaughtExceptionHandler implements UncaughtExceptionHandler, Con
 
         PendingIntent contentIntent = PendingIntent.getActivity(mApp, 0, notificationIntent, 0);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(mApp);
+        /*NotificationCompat.Builder builder = new NotificationCompat.Builder(mApp);
         builder.setSmallIcon(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB ?
                 R.drawable.notification_error_icon : R.drawable.ic_notification_error)
                 .setColor(ContextCompat.getColor(mApp, R.color.notification_background_error))
                 .setTicker(mApp.getText(R.string.ime_crashed_ticker))
                 .setContentTitle(mApp.getText(R.string.ime_name))
                 .setContentText(mApp.getText(R.string.ime_crashed_sub_text))
-                .setSubText(BuildConfig.TESTING_BUILD ? crashType : null/*not showing the type of crash in RELEASE mode*/)
+                .setSubText(BuildConfig.TESTING_BUILD ? crashType : null)
                 .setWhen(System.currentTimeMillis())
                 .setContentIntent(contentIntent)
                 .setAutoCancel(true)
@@ -149,7 +149,7 @@ class ChewbaccaUncaughtExceptionHandler implements UncaughtExceptionHandler, Con
         NotificationManager notificationManager =
                 (NotificationManager) mApp.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        notificationManager.notify(R.id.notification_icon_app_error, builder.build());
+        notificationManager.notify(R.id.notification_icon_app_error, builder.build());*/
 
         // and sending to the OS
         if (mOsDefaultHandler != null) {

@@ -185,7 +185,7 @@ public abstract class AnySoftKeyboardBase
         mInputView = mInputViewContainer.getStandardKeyboardView();
         mInputViewContainer.setOnKeyboardActionListener(this);
 
-        setupInputViewWatermark();
+        //setupInputViewWatermark();
 
         return mInputViewContainer;
     }
@@ -200,7 +200,7 @@ public abstract class AnySoftKeyboardBase
      */
     protected abstract void commitWordToInput(@NonNull CharSequence wordToCommit, boolean correcting);
 
-    protected final void setupInputViewWatermark() {
+    /*protected final void setupInputViewWatermark() {
         final String watermarkText;
         if (mSuggest.isIncognitoMode()) {
             if (BuildConfig.DEBUG) {
@@ -221,7 +221,7 @@ public abstract class AnySoftKeyboardBase
         }
 
         getInputView().setWatermark(watermarkText);
-    }
+    }*/
 
     protected KeyboardViewContainerView createInputViewContainer() {
         return (KeyboardViewContainerView) getLayoutInflater().inflate(R.layout.main_keyboard_layout, null);

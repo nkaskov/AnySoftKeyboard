@@ -81,7 +81,7 @@ public class RxSharedPrefsTest {
 
     @Test
     public void testConvertTheme() {
-        SharedPrefsHelper.setPrefsValue("settings_key_keyboard_theme_key", "28860f10-cf16-11e1-9b23-0800200c9a66");
+        SharedPrefsHelper.setPrefsValue("settings_key_keyboard_theme_key", "c38a9214-4338-4cb0-b68e-11d1683d4424");
         SharedPrefsHelper.setPrefsValue(RxSharedPrefs.CONFIGURATION_VERSION, 10);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(RuntimeEnvironment.application);

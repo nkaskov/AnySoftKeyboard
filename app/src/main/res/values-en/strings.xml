@@ -802,7 +802,7 @@
     <string name="setup_wizard_step_three_details_actions">Or, you can customize and personalize the
         keyboard to your likings:
     </string>
-    <string name="setup_wizard_step_three_action_languages">Setup languages…</string>
+    <!--<string name="setup_wizard_step_three_action_languages">Setup languages…</string>-->
     <string name="setup_wizard_step_three_action_themes">Select theme…</string>
     <string name="setup_wizard_step_three_action_all_settings">Configure everything else…</string>
 
