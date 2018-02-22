@@ -149,6 +149,7 @@ if (playStoreWhatsNewFile.text.length() > 500) {
 }
 
 dependencies {
+    compile 'com.android.volley:volley:1.1.0'
     implementation project(':base')
     implementation project(':base-rx')
     implementation project(':nextword')

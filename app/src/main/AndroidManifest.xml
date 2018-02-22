@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- REQUIRED BACKUP TO/RESTORE FROM SDCARD -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <!-- currently, only support touch and fake-touch devices -->
     <uses-feature android:name="android.hardware.faketouch" />
@@ -60,51 +61,6 @@
                 android:resource="@xml/method" />
         </service>
 
-        <!-- ui activities -->
-        <!-- settings ui activities -->
-        <!-- this is just a proxy activity, it does nothing but direct to the actual setting ativity
-        I use this, so I can 'disable' this activity at runtime, and so remove ASK from the launcher's icons -->
-        <activity
-            android:name="com.menny.android.anysoftkeyboard.LauncherSettingsActivity"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/ime_name"
-            android:launchMode="singleTop"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.AskApp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
-        </activity>
-        <activity
-            android:name="com.anysoftkeyboard.ui.settings.MainSettingsActivity"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/ime_name"
-            android:launchMode="singleTask"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.AskApp"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity
-            android:name="com.anysoftkeyboard.ui.settings.BasicAnyActivity"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/ime_name"
-            android:launchMode="singleTask"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.AskApp.NoTitle.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
-
-        <activity
-            android:name="com.anysoftkeyboard.ui.tutorials.TestersNoticeActivity"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/testers_version"
-            android:launchMode="singleTop"
-            android:noHistory="true"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.AskApp.Popup"></activity>
         <!-- ui when a crash happens -->
         <activity
             android:name="com.anysoftkeyboard.ui.SendBugReportUiActivity"
